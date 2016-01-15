@@ -1,7 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
-import java.awt.Dimension;
-import javax.swing.BorderFactory;
+import org.yecq.goleek.desktop.view.surface.Dimension;
 import javax.swing.JPanel;
 
 /**

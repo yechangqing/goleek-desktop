@@ -1,10 +1,5 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.agent.AccountAgent;
-import org.yecq.goleek.desktop.bean.param.AccountRemoveBean;
-import org.yecq.goleek.desktop.bean.result.AccountStockInfoBean;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -16,11 +11,16 @@ import javax.swing.JCheckBox;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
-import javax.swing.JTable;
+import org.yecq.goleek.desktop.view.surface.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
+import org.yecq.goleek.desktop.agent.AccountAgent;
+import org.yecq.goleek.desktop.bean.param.AccountRemoveBean;
+import org.yecq.goleek.desktop.bean.result.AccountStockInfoBean;
+import org.yecq.goleek.desktop.service.Sret;
+import org.yecq.goleek.desktop.service.core.Root;
 
 /**
  *

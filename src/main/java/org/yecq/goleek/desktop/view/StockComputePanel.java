@@ -1,12 +1,11 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.bean.result.StockInfoBean;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import org.yecq.goleek.desktop.view.surface.Dimension;
+import org.yecq.goleek.desktop.view.surface.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
+import org.yecq.goleek.desktop.view.surface.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -21,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import org.yecq.goleek.desktop.bean.result.StockInfoBean;
 
 /**
  *

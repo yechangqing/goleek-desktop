@@ -1,9 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.agent.IpPort;
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
@@ -12,6 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.yecq.goleek.desktop.agent.IpPort;
+import org.yecq.goleek.desktop.service.core.Root;
 
 /**
  *
@@ -59,13 +58,13 @@ public class MainFrame extends JFrame {
         }
         this.setJMenuBar(new MenuBar());
 //        this.add(new ToolBar(), BorderLayout.NORTH);
-        this.setTitle("常规版-" + Root.getInstance().getBean(IpPort.class).getIp());
+        this.setTitle("Surface版-" + Root.getInstance().getBean(IpPort.class).getIp());
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         this.pack();
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        java.awt.Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 //        this.setSize(d.width - 10, d.height - 40);
-        Dimension dd1 = this.getSize();
+        java.awt.Dimension dd1 = this.getSize();
         int x = d.width - dd1.width;
         int y = d.height - dd1.height;
         this.setLocation(x / 2, y / 3);

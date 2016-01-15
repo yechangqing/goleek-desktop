@@ -1,11 +1,10 @@
 package org.yecq.goleek.desktop.view;
 
-import java.awt.Dimension;
+import org.yecq.goleek.desktop.view.surface.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 

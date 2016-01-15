@@ -5,8 +5,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Font;
+import org.yecq.goleek.desktop.view.surface.Dimension;
+import org.yecq.goleek.desktop.view.surface.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
@@ -386,8 +386,9 @@ public class DateChooser extends JPanel {
 
         protected void paintComponent(Graphics g) {
             g.setFont(font);
-            g.drawString("星期日 星期一 星期二 星期三 星期四 星期五 星期六", 5, 10);
-            g.drawLine(0, 15, getWidth(), 15);
+            int sep = 15;
+            g.drawString("星期日 星期一 星期二 星期三 星期四 星期五 星期六", 5, 10 + sep);
+            g.drawLine(0, 15 + sep, getWidth(), 15 + sep);
         }
     }
 

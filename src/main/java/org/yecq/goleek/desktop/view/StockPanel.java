@@ -1,9 +1,9 @@
 package org.yecq.goleek.desktop.view;
 
-import java.awt.Dimension;
+import org.yecq.goleek.desktop.view.surface.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
+import org.yecq.goleek.desktop.view.surface.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;

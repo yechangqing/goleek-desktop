@@ -1,17 +1,10 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.agent.PositionFuturesAgent;
-import org.yecq.goleek.desktop.bean.param.PositionFuturesEditBean;
-import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
-import org.yecq.goleek.desktop.cache.PositionFuturesCache;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
-import org.yecq.goleek.desktop.service.core.Util;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import org.yecq.goleek.desktop.view.surface.Dimension;
+import org.yecq.goleek.desktop.view.surface.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
+import org.yecq.goleek.desktop.view.surface.Insets;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +19,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import org.yecq.goleek.desktop.agent.PositionFuturesAgent;
+import org.yecq.goleek.desktop.bean.param.PositionFuturesEditBean;
+import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
+import org.yecq.goleek.desktop.cache.PositionFuturesCache;
+import org.yecq.goleek.desktop.service.Sret;
+import org.yecq.goleek.desktop.service.core.Root;
+import org.yecq.goleek.desktop.service.core.Util;
 
 /**
  *
@@ -59,8 +59,8 @@ class PositionFuturesQuitDialog extends JDialog {
         this.setTitle(this.pos.getContract() + "-退出");
         this.pack();
         Point point = MainFrame.getInstance().getLocation();
-        Dimension dim = MainFrame.getInstance().getSize();
-        Dimension dd = this.getSize();
+        java.awt.Dimension dim = MainFrame.getInstance().getSize();
+        java.awt.Dimension dd = this.getSize();
         int x = (dim.width - dd.width) / 2 + point.x;
         int y = (dim.height - dd.height) / 4 + point.y;
         this.setLocation(x, y);

@@ -7,34 +7,81 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <spring.version>4.0.9.RELEASE</spring.version>
+        <project-version>1.0.surface</project-version>
     </properties>
     
     <groupId>org.yecq.goleek</groupId>
-    <artifactId>goleek-desktop</artifactId>
-    <version>1.0</version>
+    <artifactId>desktop</artifactId>
+    <version>${project-version}</version>
     <packaging>jar</packaging>
     
-    <name>${artifactId}-${version}</name>
+    <name>goleek-desktop-${project-version}</name>
     
     <dependencies>
         <dependency>
-            <groupId>org.yecq.baseframework</groupId>
-            <artifactId>baseframework-plain</artifactId>
-            <version>1.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.4.1</version>
-        </dependency>      
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>        
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
         
         <!-- 测试 -->
         <dependency>
-            <groupId>org.yecq.baseframework</groupId>
-            <artifactId>baseframework-test</artifactId>
-            <version>1.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>2.5.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- 读取excel，dbunit要用到，注意最高支持3.2的版本，再高会报错 -->
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.2-FINAL</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>3.3.1</version>
+            <scope>test</scope>
+        </dependency>
+    
     </dependencies>
     
     <build>

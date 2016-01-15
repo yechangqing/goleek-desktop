@@ -1,13 +1,5 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.bean.result.StockInfoBean;
-import org.yecq.goleek.desktop.cache.AccountStockCache;
-import org.yecq.goleek.desktop.cache.CacheListener;
-import org.yecq.goleek.desktop.cache.StockCache;
-import org.yecq.goleek.desktop.cache.TradeSettingCache;
-import org.yecq.goleek.desktop.service.core.Compute;
-import org.yecq.goleek.desktop.service.core.Root;
-import org.yecq.goleek.desktop.service.core.Util;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +8,14 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import org.yecq.goleek.desktop.bean.result.StockInfoBean;
+import org.yecq.goleek.desktop.cache.AccountStockCache;
+import org.yecq.goleek.desktop.cache.CacheListener;
+import org.yecq.goleek.desktop.cache.StockCache;
+import org.yecq.goleek.desktop.cache.TradeSettingCache;
+import org.yecq.goleek.desktop.service.core.Compute;
+import org.yecq.goleek.desktop.service.core.Root;
+import org.yecq.goleek.desktop.service.core.Util;
 
 /**
  *

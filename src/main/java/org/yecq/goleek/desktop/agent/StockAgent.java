@@ -1,5 +1,6 @@
 package org.yecq.goleek.desktop.agent;
 
+import org.springframework.stereotype.Component;
 import org.yecq.goleek.desktop.aspect.Notify;
 import org.yecq.goleek.desktop.bean.param.StockAddBean;
 import org.yecq.goleek.desktop.bean.param.StockInterestBean;
@@ -8,7 +9,6 @@ import org.yecq.goleek.desktop.bean.param.StockRemoveBean;
 import org.yecq.goleek.desktop.bean.param.StockUninterestBean;
 import org.yecq.goleek.desktop.bean.result.StockInfoBean;
 import org.yecq.goleek.desktop.service.Sret;
-import org.springframework.stereotype.Component;
 
 /**
  *

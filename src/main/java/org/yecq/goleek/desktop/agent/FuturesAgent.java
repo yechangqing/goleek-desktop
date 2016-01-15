@@ -1,5 +1,6 @@
 package org.yecq.goleek.desktop.agent;
 
+import org.springframework.stereotype.Component;
 import org.yecq.goleek.desktop.aspect.Notify;
 import org.yecq.goleek.desktop.bean.param.FuturesAddBean;
 import org.yecq.goleek.desktop.bean.param.FuturesCloneBean;
@@ -9,7 +10,6 @@ import org.yecq.goleek.desktop.bean.param.FuturesRemoveBean;
 import org.yecq.goleek.desktop.bean.param.FuturesUninterestBean;
 import org.yecq.goleek.desktop.bean.result.FuturesInfoBean;
 import org.yecq.goleek.desktop.service.Sret;
-import org.springframework.stereotype.Component;
 
 /**
  *

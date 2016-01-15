@@ -1,5 +1,6 @@
 package org.yecq.goleek.desktop.agent;
 
+import org.springframework.stereotype.Component;
 import org.yecq.goleek.desktop.aspect.Notify;
 import org.yecq.goleek.desktop.bean.param.AccountAddBean;
 import org.yecq.goleek.desktop.bean.param.AccountModifyBean;
@@ -9,7 +10,6 @@ import org.yecq.goleek.desktop.bean.param.AccountUseBean;
 import org.yecq.goleek.desktop.bean.result.AccountFuturesInfoBean;
 import org.yecq.goleek.desktop.bean.result.AccountStockInfoBean;
 import org.yecq.goleek.desktop.service.Sret;
-import org.springframework.stereotype.Component;
 
 /**
  *

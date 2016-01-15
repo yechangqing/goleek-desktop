@@ -1,6 +1,5 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -11,6 +10,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButtonMenuItem;
+import org.yecq.goleek.desktop.service.core.Root;
 
 /**
  *
@@ -94,7 +94,7 @@ class MenuBar extends JMenuBar {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(MainFrame.getInstance(), "版本 v1.0", "版本", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(MainFrame.getInstance(), "版本 v1.0.surface", "版本", JOptionPane.PLAIN_MESSAGE);
             }
         });
         about.add(version);

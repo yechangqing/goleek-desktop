@@ -1,14 +1,7 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.agent.AccountAgent;
-import org.yecq.goleek.desktop.bean.param.AccountAddBean;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
-import org.yecq.goleek.desktop.service.core.Util;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import org.yecq.goleek.desktop.agent.AccountAgent;
+import org.yecq.goleek.desktop.bean.param.AccountAddBean;
+import org.yecq.goleek.desktop.service.Sret;
+import org.yecq.goleek.desktop.service.core.Root;
+import org.yecq.goleek.desktop.service.core.Util;
+import org.yecq.goleek.desktop.view.surface.Dimension;
+import org.yecq.goleek.desktop.view.surface.Insets;
 
 /**
  *
@@ -51,8 +51,8 @@ class AccountFuturesAddDialog extends JDialog {
         this.setTitle("期货账户增加");
         this.pack();
         Point point = MainFrame.getInstance().getLocation();
-        Dimension dim = MainFrame.getInstance().getSize();
-        Dimension dd = this.getSize();
+        java.awt.Dimension dim = MainFrame.getInstance().getSize();
+        java.awt.Dimension dd = this.getSize();
         int x = (dim.width - dd.width) / 2 + point.x;
         int y = (dim.height - dd.height) / 4 + point.y;
         this.setLocation(x, y);

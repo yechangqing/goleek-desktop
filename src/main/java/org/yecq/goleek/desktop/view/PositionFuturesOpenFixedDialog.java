@@ -1,9 +1,9 @@
 package org.yecq.goleek.desktop.view;
 
-import java.awt.Dimension;
+import org.yecq.goleek.desktop.view.surface.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
+import org.yecq.goleek.desktop.view.surface.Insets;
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,8 +47,8 @@ class PositionFuturesOpenFixedDialog extends JDialog {
 //        this.setTitle("期货开仓-" + this.param.getContract());
         this.pack();
         Point point = MainFrame.getInstance().getLocation();
-        Dimension dim = MainFrame.getInstance().getSize();
-        Dimension dd = this.getSize();
+        java.awt.Dimension dim = MainFrame.getInstance().getSize();
+        java.awt.Dimension dd = this.getSize();
         int x = (dim.width - dd.width) / 2 + point.x;
         int y = (dim.height - dd.height) / 4 + point.y;
         this.setLocation(x, y);

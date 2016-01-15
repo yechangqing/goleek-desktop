@@ -1,6 +1,5 @@
 package org.yecq.goleek.desktop.service.core;
 
-import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.List;
 
