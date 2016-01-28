@@ -4,8 +4,6 @@ import org.yecq.goleek.desktop.agent.PositionStockAgent;
 import org.yecq.goleek.desktop.bean.param.PositionStockEditBean;
 import org.yecq.goleek.desktop.bean.result.PositionStockInfoBean;
 import org.yecq.goleek.desktop.cache.PositionStockCache;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
 import org.yecq.goleek.desktop.service.core.Util;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -27,6 +25,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import org.yecq.baseframework.plain.core.Root;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

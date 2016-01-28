@@ -3,8 +3,6 @@ package org.yecq.goleek.desktop.view;
 import org.yecq.goleek.desktop.agent.StockAgent;
 import org.yecq.goleek.desktop.bean.param.StockAddBean;
 import org.yecq.goleek.desktop.cache.StockCache;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -25,6 +23,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import org.yecq.baseframework.plain.core.Root;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

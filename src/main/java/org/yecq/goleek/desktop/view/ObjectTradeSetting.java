@@ -1,9 +1,5 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.goleek.desktop.cache.CacheListener;
-import org.yecq.goleek.desktop.cache.TradeSettingCache;
-import org.yecq.goleek.desktop.service.core.Root;
-
 /**
  * 保存交易设置的对象
  *

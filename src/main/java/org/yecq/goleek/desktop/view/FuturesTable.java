@@ -4,8 +4,6 @@ import org.yecq.goleek.desktop.agent.FuturesAgent;
 import org.yecq.goleek.desktop.bean.param.FuturesCloneBean;
 import org.yecq.goleek.desktop.bean.param.FuturesRemoveBean;
 import org.yecq.goleek.desktop.bean.result.FuturesInfoBean;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -22,6 +20,8 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
+import org.yecq.baseframework.plain.core.Root;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

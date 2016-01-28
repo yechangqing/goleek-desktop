@@ -1,9 +1,9 @@
 package org.yecq.goleek.desktop.view;
 
+import org.yecq.baseframework.plain.core.Root;
 import org.yecq.goleek.desktop.cache.AccountFuturesCache;
 import org.yecq.goleek.desktop.cache.AccountStockCache;
 import org.yecq.goleek.desktop.cache.CacheListener;
-import org.yecq.goleek.desktop.service.core.Root;
 
 /**
  * 保存交易账户的对象

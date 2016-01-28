@@ -3,8 +3,6 @@ package org.yecq.goleek.desktop.view;
 import org.yecq.goleek.desktop.agent.PositionStockAgent;
 import org.yecq.goleek.desktop.bean.param.PositionStockDeleteBean;
 import org.yecq.goleek.desktop.bean.result.PositionStockInfoBean;
-import org.yecq.goleek.desktop.service.Sret;
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -18,6 +16,8 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
+import org.yecq.baseframework.plain.core.Root;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

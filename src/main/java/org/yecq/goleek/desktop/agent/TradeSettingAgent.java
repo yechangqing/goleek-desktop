@@ -1,10 +1,10 @@
 package org.yecq.goleek.desktop.agent;
 
-import org.yecq.goleek.desktop.aspect.Notify;
 import org.yecq.goleek.desktop.bean.param.TradeSettingSaveBean;
 import org.yecq.goleek.desktop.bean.result.TradeSettingInfoBean;
-import org.yecq.goleek.desktop.service.Sret;
 import org.springframework.stereotype.Component;
+import org.yecq.baseframework.plain.core.Notify;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

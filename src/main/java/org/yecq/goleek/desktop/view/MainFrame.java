@@ -1,7 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.IpPort;
-import org.yecq.goleek.desktop.service.core.Root;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
@@ -12,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.yecq.baseframework.plain.core.Root;
 
 /**
  *

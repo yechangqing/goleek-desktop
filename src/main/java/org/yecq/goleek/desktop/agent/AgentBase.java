@@ -1,14 +1,14 @@
 package org.yecq.goleek.desktop.agent;
 
-import org.yecq.goleek.desktop.service.core.CoreChangeNotifier;
-import org.yecq.goleek.desktop.service.core.Root;
-import org.yecq.goleek.desktop.service.Sret;
 import com.google.gson.Gson;
 import java.lang.reflect.Array;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.yecq.baseframework.plain.core.CoreChangeNotifier;
+import org.yecq.baseframework.plain.core.Root;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

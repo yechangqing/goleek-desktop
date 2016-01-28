@@ -1,12 +1,12 @@
 package org.yecq.goleek.desktop.cache;
 
-import org.yecq.goleek.desktop.service.core.CoreChangeListener;
-import org.yecq.goleek.desktop.service.core.CoreChangeNotifier;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.yecq.baseframework.plain.core.CoreChangeListener;
+import org.yecq.baseframework.plain.core.CoreChangeNotifier;
 
 /**
  *

@@ -1,14 +1,14 @@
 package org.yecq.goleek.desktop.agent;
 
-import org.yecq.goleek.desktop.aspect.Notify;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesActionsBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesCloseBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesDeleteBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesEditBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesOpenBean;
 import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
-import org.yecq.goleek.desktop.service.Sret;
 import org.springframework.stereotype.Component;
+import org.yecq.baseframework.plain.core.Notify;
+import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

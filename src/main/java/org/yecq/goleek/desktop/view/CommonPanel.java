@@ -5,7 +5,6 @@ import org.yecq.goleek.desktop.cache.AccountFuturesCache;
 import org.yecq.goleek.desktop.cache.AccountStockCache;
 import org.yecq.goleek.desktop.cache.CacheListener;
 import org.yecq.goleek.desktop.cache.TradeSettingCache;
-import org.yecq.goleek.desktop.service.core.Root;
 import org.yecq.goleek.desktop.service.core.Util;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -16,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import org.yecq.baseframework.plain.core.Root;
 
 /**
  * 顶部公共信息显示区

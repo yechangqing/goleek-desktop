@@ -19,12 +19,29 @@
     <!-- 扫描注解bean所在的范围 -->
     <context:component-scan base-package="org.yecq.goleek.desktop"/>
     
+    <!-- 导入所需要的ban -->
+    <bean class="org.yecq.baseframework.plain.core.CoreChangeNotifier"/>
+    <bean id="notify_advice" class="org.yecq.baseframework.plain.core.NotifyAdviceBase"/>
+    <bean class="org.yecq.baseframework.plain.core.Root"/>
+    
+    <!-- 配置aop -->
+    <aop:aspectj-autoproxy/>
+    
+    <!-- 具体aop配置 -->
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="notify_advice">
+            <aop:pointcut id="notify_pointcut" expression="within(org.yecq.goleek.desktop.agent.*) and 
+                execution(@org.yecq.baseframework.plain.core.Notify * *(..))"/>
+            <aop:after method="notifyChange" pointcut-ref="notify_pointcut"/>
+        </aop:aspect>
+    </aop:config>
+    
     <!-- 配置服务器地址 -->
-<!--    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
-          p:ip="goleek.sinaapp.com" p:port="" p:app=""/>-->
+    <!--    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
+    p:ip="goleek.sinaapp.com" p:port="" p:app=""/>-->
     
     <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
-          p:ip="127.0.0.1" p:port="8080" p:app="goleek-server-1.0.sae"/>
+          p:ip="127.0.0.1" p:port="8080" p:app="goleek-server-1.1.sae"/>
     
     <!-- 初始启动的模式，正常还是简单，只能为normal或simple -->
     <bean id="mode" class="org.yecq.goleek.desktop.view.Mode" p:mode="simple"/>
