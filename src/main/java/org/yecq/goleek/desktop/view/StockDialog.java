@@ -11,8 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import org.yecq.baseframework.plain.core.Root;
+import org.yecq.baseframework.plain.service.Sret;
+import org.yecq.goleek.desktop.agent.StockAgent;
 
 /**
  *
@@ -74,6 +78,30 @@ class StockDialog extends JDialog {
         JScrollPane jsp = new JScrollPane(table);
         jsp.setPreferredSize(new Dimension(370, 400));
         p.add(jsp, c);
+
+        c.gridy++;
+        c.weighty = 0;
+        c.insets = new Insets(6, 0, 0, 0);
+        JPanel tmpp = new JPanel();
+        tmpp.setLayout(new GridBagLayout());
+        GridBagConstraints tc = new GridBagConstraints();
+        tc.gridx = 0;
+        tc.gridy = 0;
+        tc.weightx = 1;
+        tc.anchor = GridBagConstraints.EAST;
+        JButton all1 = new JButton("全部选");
+        all1.setPreferredSize(new Dimension(70, 22));
+        this.obj.put("select_all", all1);
+        tmpp.add(all1, tc);
+        tc.gridx++;
+        tc.weightx = 0;
+        tc.insets = new Insets(0, 3, 0, 0);
+        JButton can1 = new JButton("全取消");
+        can1.setPreferredSize(new Dimension(70, 22));
+        this.obj.put("cancel_all", can1);
+        tmpp.add(can1, tc);
+        p.add(tmpp, c);
+
         return p;
     }
 
@@ -88,6 +116,32 @@ class StockDialog extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new StockAddDialog().setVisible(true);
+            }
+        });
+
+        JButton all = (JButton) obj.get("select_all");
+        all.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (JOptionPane.showConfirmDialog(null, "是否选择所有股票？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    Sret sr = Root.getInstance().getBean(StockAgent.class).interestAll();
+                    if (!sr.isOk()) {
+                        Vutil.showErrorMsg(sr.getMessage());
+                    }
+                }
+            }
+        });
+
+        JButton can = (JButton) obj.get("cancel_all");
+        can.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (JOptionPane.showConfirmDialog(null, "是否取消所有股票？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    Sret sr = Root.getInstance().getBean(StockAgent.class).unInterestAll();
+                    if (!sr.isOk()) {
+                        Vutil.showErrorMsg(sr.getMessage());
+                    }
+                }
             }
         });
     }

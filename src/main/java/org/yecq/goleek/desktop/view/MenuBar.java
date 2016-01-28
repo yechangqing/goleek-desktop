@@ -94,7 +94,12 @@ class MenuBar extends JMenuBar {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(MainFrame.getInstance(), "版本 v1.0", "版本", JOptionPane.PLAIN_MESSAGE);
+                String str = "客户端版本 " + Version.getVersion() + "\n\n";
+                String[] li = Version.getFuncitonList();
+                for (int i = 0; i < li.length; i++) {
+                    str += (i + 1) + "、" + li[i] + "\n";
+                }
+                JOptionPane.showMessageDialog(MainFrame.getInstance(), str, "版本信息", JOptionPane.PLAIN_MESSAGE);
             }
         });
         about.add(version);

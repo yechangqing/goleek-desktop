@@ -76,4 +76,19 @@ public class StockAgent extends AgentBase {
         return sr;
     }
 
+    // v1.1增加，感兴趣所有合约
+    @Notify({"stock"})
+    public Sret interestAll() {
+        String json = HttpUtil.post(getUrlString() + "interest_all.go", null);
+        Sret sr = getSret(json, null);
+        return sr;
+    }
+
+    // v1.1增加，取消感兴趣所有合约
+    @Notify({"stock"})
+    public Sret unInterestAll() {
+        String json = HttpUtil.post(getUrlString() + "un_interest_all.go", null);
+        Sret sr = getSret(json, null);
+        return sr;
+    }
 }

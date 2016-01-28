@@ -1,7 +1,7 @@
 @echo off
 
 set classpath=.
-set classpath=%classpath%;.\goleek-desktop-1.0.jar
+set classpath=%classpath%;.\goleek-desktop-1.1.jar
 set classpath=%classpath%;.\lib\aopalliance-1.0.jar
 set classpath=%classpath%;.\lib\aspectjweaver-1.8.4.jar
 set classpath=%classpath%;.\lib\baseframework-plain-1.0.jar
