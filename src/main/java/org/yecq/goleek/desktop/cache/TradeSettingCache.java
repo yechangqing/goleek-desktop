@@ -1,12 +1,12 @@
 package org.yecq.goleek.desktop.cache;
 
+import com.jhhc.baseframework.client.listener.CoreChangeListener;
+import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.TradeSettingAgent;
 import org.yecq.goleek.desktop.bean.result.TradeSettingInfoBean;
 import org.yecq.goleek.desktop.view.Vutil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.yecq.baseframework.plain.core.CoreChangeListener;
-import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

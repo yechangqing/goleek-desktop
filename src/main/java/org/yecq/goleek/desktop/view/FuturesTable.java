@@ -1,5 +1,7 @@
 package org.yecq.goleek.desktop.view;
 
+import com.jhhc.baseframework.client.Root;
+import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.FuturesAgent;
 import org.yecq.goleek.desktop.bean.param.FuturesCloneBean;
 import org.yecq.goleek.desktop.bean.param.FuturesRemoveBean;
@@ -20,8 +22,6 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import org.yecq.baseframework.plain.core.Root;
-import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

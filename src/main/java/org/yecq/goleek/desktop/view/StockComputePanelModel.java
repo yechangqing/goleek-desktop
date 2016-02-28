@@ -1,5 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
+import com.jhhc.baseframework.client.Root;
 import org.yecq.goleek.desktop.bean.result.StockInfoBean;
 import org.yecq.goleek.desktop.cache.AccountStockCache;
 import org.yecq.goleek.desktop.cache.CacheListener;
@@ -15,7 +16,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import org.yecq.baseframework.plain.core.Root;
 
 /**
  *

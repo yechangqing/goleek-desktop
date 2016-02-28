@@ -1,5 +1,7 @@
 package org.yecq.goleek.desktop.view;
 
+import com.jhhc.baseframework.client.Root;
+import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.StockAgent;
 import org.yecq.goleek.desktop.bean.param.StockInterestBean;
 import org.yecq.goleek.desktop.bean.param.StockModifyBean;
@@ -9,8 +11,6 @@ import org.yecq.goleek.desktop.cache.CacheListener;
 import org.yecq.goleek.desktop.cache.StockCache;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import org.yecq.baseframework.plain.core.Root;
-import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

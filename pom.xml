@@ -2,6 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
+    <description>
+        1、版本2.0开始使用RestUtil的REST风格，服务器同步到2.0版本提供REST服务
+    </description>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -11,26 +15,21 @@
     
     <groupId>org.yecq.goleek</groupId>
     <artifactId>goleek-desktop</artifactId>
-    <version>1.1</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
     
     <name>${artifactId}-${version}</name>
     
     <dependencies>
         <dependency>
-            <groupId>org.yecq.baseframework</groupId>
-            <artifactId>baseframework-plain</artifactId>
+            <groupId>com.jhhc.baseframework</groupId>
+            <artifactId>baseframework-client</artifactId>
             <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.4.1</version>
-        </dependency>      
+        </dependency>    
         
         <!-- 测试 -->
         <dependency>
-            <groupId>org.yecq.baseframework</groupId>
+            <groupId>com.jhhc.baseframework</groupId>
             <artifactId>baseframework-test</artifactId>
             <version>1.0</version>
             <scope>test</scope>

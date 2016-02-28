@@ -1,11 +1,11 @@
 package org.yecq.goleek.desktop.view;
 
+import com.jhhc.baseframework.client.Root;
 import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
 import org.yecq.goleek.desktop.cache.CacheListener;
 import org.yecq.goleek.desktop.cache.PositionFuturesCache;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import org.yecq.baseframework.plain.core.Root;
 
 /**
  *

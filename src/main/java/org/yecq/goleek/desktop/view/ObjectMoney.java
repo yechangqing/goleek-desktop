@@ -1,6 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
-import org.yecq.baseframework.plain.core.Root;
+import com.jhhc.baseframework.client.Root;
 import org.yecq.goleek.desktop.cache.AccountFuturesCache;
 import org.yecq.goleek.desktop.cache.AccountStockCache;
 import org.yecq.goleek.desktop.cache.CacheListener;

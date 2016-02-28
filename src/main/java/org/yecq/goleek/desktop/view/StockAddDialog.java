@@ -1,5 +1,7 @@
 package org.yecq.goleek.desktop.view;
 
+import com.jhhc.baseframework.client.Root;
+import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.StockAgent;
 import org.yecq.goleek.desktop.bean.param.StockAddBean;
 import org.yecq.goleek.desktop.cache.StockCache;
@@ -23,8 +25,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import org.yecq.baseframework.plain.core.Root;
-import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *

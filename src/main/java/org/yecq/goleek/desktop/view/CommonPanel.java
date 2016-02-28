@@ -1,5 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
+import com.jhhc.baseframework.client.Root;
 import org.yecq.goleek.desktop.bean.result.TradeSettingInfoBean;
 import org.yecq.goleek.desktop.cache.AccountFuturesCache;
 import org.yecq.goleek.desktop.cache.AccountStockCache;
@@ -15,7 +16,6 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import org.yecq.baseframework.plain.core.Root;
 
 /**
  * 顶部公共信息显示区

@@ -1,14 +1,15 @@
 package org.yecq.goleek.desktop.agent;
 
 import com.google.gson.Gson;
+import com.jhhc.baseframework.client.Root;
+import com.jhhc.baseframework.client.listener.CoreChangeNotifier;
+import com.jhhc.baseframework.client.rest.RestUtil;
+import com.jhhc.baseframework.client.rest.Sret;
 import java.lang.reflect.Array;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.yecq.baseframework.plain.core.CoreChangeNotifier;
-import org.yecq.baseframework.plain.core.Root;
-import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *
@@ -18,6 +19,9 @@ class AgentBase {
 
     @Autowired
     protected IpPort addr;
+    
+    @Autowired
+    protected RestUtil rest;
 
     // 在使用xml进行配置时，参数注入需要有显示的get和set方法，在注解配置里是不需要的
     public IpPort getAddr() {
@@ -143,13 +147,11 @@ class AgentBase {
                     tmp[k] = new Gson().fromJson(new Gson().toJson(arr.get(k)), t);
                 }
                 sr.setData(tmp);
+            } else // 针对返回一般对象的情况
+            if (t == Integer.class) {
+                sr.setData((int) ((Double) o).doubleValue());
             } else {
-                // 针对返回一般对象的情况
-                if (t == Integer.class) {
-                    sr.setData((int) ((Double) o).doubleValue());
-                } else {
-                    sr.setData(o);
-                }
+                sr.setData(o);
             }
             return sr;
         } catch (Throwable e) {

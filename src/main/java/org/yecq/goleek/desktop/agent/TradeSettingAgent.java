@@ -1,10 +1,10 @@
 package org.yecq.goleek.desktop.agent;
 
+import com.jhhc.baseframework.client.listener.Notify;
+import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.bean.param.TradeSettingSaveBean;
 import org.yecq.goleek.desktop.bean.result.TradeSettingInfoBean;
 import org.springframework.stereotype.Component;
-import org.yecq.baseframework.plain.core.Notify;
-import org.yecq.baseframework.plain.service.Sret;
 
 /**
  *
@@ -20,15 +20,17 @@ public class TradeSettingAgent extends AgentBase {
     }
 
     public Sret getDefault() {
-        String json = HttpUtil.post(getUrlString() + "get_default.go", null);
-        Sret sr = getSretSingle(json, TradeSettingInfoBean.class);
+        Sret sr=rest.get4Object(null, null, null);
+//        String json = HttpUtil.post(getUrlString() + "get_default.go", null);
+//        Sret sr = getSretSingle(json, TradeSettingInfoBean.class);
         return sr;
     }
 
     @Notify({"setting"})
     public Sret saveDefault(TradeSettingSaveBean bean) {
-        String json = HttpUtil.post(getUrlString() + "save_default.go", bean);
-        Sret sr = getSret(json, null);
+        Sret sr=rest.put(null, null, null);
+//        String json = HttpUtil.post(getUrlString() + "save_default.go", bean);
+//        Sret sr = getSret(json, null);
         return sr;
     }
 }
