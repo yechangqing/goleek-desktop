@@ -16,12 +16,12 @@
                             ">
     
     <!-- 扫描注解bean所在的范围 -->
+    <context:component-scan base-package="com.jhhc.baseframework.client.listener"/>
     <context:component-scan base-package="org.yecq.goleek.desktop"/>
     
-    <!-- 配置aop -->
-    <!--<aop:aspectj-autoproxy/>-->
+    <!-- 导入所需要的bean -->
+    <bean class="com.jhhc.baseframework.client.Root"/>
     
-    <!-- 导入所需要的ban -->
     <!-- 配置RestTemplate -->
     <bean class="org.springframework.web.client.RestTemplate">
         <property name="requestFactory"  ref="httpClientFactory"/>
@@ -30,12 +30,23 @@
     <bean class="com.jhhc.baseframework.client.rest.RestUtil"/>
     
     <!-- 配置服务器地址 -->
-    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
-          p:ip="goleek.applinzi.com" p:port="" p:app=""/>
-    
     <!--    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
-    p:ip="127.0.0.1" p:port="8080" p:app="goleek-server-1.1.sae"/>-->
+    p:ip="goleek.applinzi.com" p:port="" p:app=""/>-->
+    
+    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
+          p:ip="127.0.0.1" p:port="8080" p:app="goleek-server-2.0"/>
     
     <!-- 初始启动的模式，正常还是简单，只能为normal或simple -->
-    <bean id="mode" class="org.yecq.goleek.desktop.view.Mode" p:mode="simple"/>
+    <bean id="mode" class="org.yecq.goleek.desktop.view.Mode" p:mode="normal"/>
+    
+    <!-- 配置aop -->
+    <aop:aspectj-autoproxy/>
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="notify_advice">
+            <!-- 此处需要手动填入 -->
+            <aop:pointcut id="notify_pointcut" expression="within(org.yecq.goleek.desktop.agent..*) 
+                and execution(@com.jhhc.baseframework.client.listener.Notify * *(..))"/>
+            <aop:after method="notifyChange" pointcut-ref="notify_pointcut"/>
+        </aop:aspect>
+    </aop:config>
 </beans>

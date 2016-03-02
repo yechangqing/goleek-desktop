@@ -19,7 +19,7 @@ class AgentBase {
 
     @Autowired
     protected IpPort addr;
-    
+
     @Autowired
     protected RestUtil rest;
 
@@ -47,7 +47,7 @@ class AgentBase {
             ip += "/" + app;
         }
 
-        return "http://" + ip + "/";
+        return "http://" + ip;
     }
 
     protected void fireCoreChange(String[] names) {
@@ -148,10 +148,12 @@ class AgentBase {
                 }
                 sr.setData(tmp);
             } else // 针对返回一般对象的情况
-            if (t == Integer.class) {
-                sr.setData((int) ((Double) o).doubleValue());
-            } else {
-                sr.setData(o);
+            {
+                if (t == Integer.class) {
+                    sr.setData((int) ((Double) o).doubleValue());
+                } else {
+                    sr.setData(o);
+                }
             }
             return sr;
         } catch (Throwable e) {
@@ -160,4 +162,5 @@ class AgentBase {
         }
         return sr;
     }
+
 }

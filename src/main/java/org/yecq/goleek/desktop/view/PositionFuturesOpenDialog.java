@@ -121,7 +121,7 @@ class PositionFuturesOpenDialog extends JDialog {
         c.anchor = GridBagConstraints.WEST;
         c.insets = new Insets(0, 15, 0, 0);
         JComboBox contract = new JComboBox();
-        Dimension dd = new Dimension(90, 22);
+        Dimension dd = new Dimension(100, 22);
         contract.setPreferredSize(dd);
         this.obj.put("contract", contract);
         p.add(contract, c);

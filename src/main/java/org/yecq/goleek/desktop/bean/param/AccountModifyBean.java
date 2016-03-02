@@ -10,7 +10,6 @@ import java.util.Set;
  */
 public class AccountModifyBean {
 
-    private String id;
     private String code;
     private String company;
     private double money;
@@ -20,15 +19,6 @@ public class AccountModifyBean {
 
     public AccountModifyBean() {
         this.value = new HashSet();
-    }
-
-    public AccountModifyBean(String id) {
-        this.id = id;
-        this.value = new HashSet();
-    }
-
-    public String getId() {
-        return id;
     }
 
     public boolean isCode() {

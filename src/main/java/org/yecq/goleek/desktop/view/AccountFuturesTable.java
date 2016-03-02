@@ -3,7 +3,6 @@ package org.yecq.goleek.desktop.view;
 import com.jhhc.baseframework.client.Root;
 import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.AccountAgent;
-import org.yecq.goleek.desktop.bean.param.AccountRemoveBean;
 import org.yecq.goleek.desktop.bean.result.AccountFuturesInfoBean;
 import java.awt.Color;
 import java.awt.Component;
@@ -70,8 +69,7 @@ class AccountFuturesTable extends JTable {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             if (JOptionPane.showConfirmDialog(null, "是否删除该账户？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                                AccountRemoveBean rem = new AccountRemoveBean(bean.getId());
-                                Sret sr = Root.getInstance().getBean(AccountAgent.class).remove(rem);
+                                Sret sr = Root.getInstance().getBean(AccountAgent.class).remove(bean.getId());
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                     return;

@@ -179,8 +179,8 @@ class PositionFuturesCloseDialog extends JDialog {
                 String date = t.trim();
 
                 if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否平仓？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                    PositionFuturesCloseBean bean = new PositionFuturesCloseBean(pos.getId(), lot, price, date);
-                    Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).close(bean);
+                    PositionFuturesCloseBean bean = new PositionFuturesCloseBean(lot, price, date);
+                    Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).close(pos.getId(), bean);
                     if (!sr.isOk()) {
                         Vutil.showErrorMsg(sr.getMessage());
                     } else {

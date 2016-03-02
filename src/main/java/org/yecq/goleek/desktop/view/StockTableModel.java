@@ -3,9 +3,7 @@ package org.yecq.goleek.desktop.view;
 import com.jhhc.baseframework.client.Root;
 import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.StockAgent;
-import org.yecq.goleek.desktop.bean.param.StockInterestBean;
 import org.yecq.goleek.desktop.bean.param.StockModifyBean;
-import org.yecq.goleek.desktop.bean.param.StockUninterestBean;
 import org.yecq.goleek.desktop.bean.result.StockInfoBean;
 import org.yecq.goleek.desktop.cache.CacheListener;
 import org.yecq.goleek.desktop.cache.StockCache;
@@ -72,7 +70,7 @@ class StockTableModel extends AbstractTableModel implements CacheListener {
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
         StockInfoBean bean = getRowBean(rowIndex);
-        StockModifyBean modi = new StockModifyBean(bean.getId());
+        StockModifyBean modi = new StockModifyBean();
         Sret sr = null;
         StockAgent agent = Root.getInstance().getBean(StockAgent.class);
         switch (columnIndex) {
@@ -85,7 +83,7 @@ class StockTableModel extends AbstractTableModel implements CacheListener {
                 }
                 modi.setCode(code);
                 modi.setExchange(exchange);
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 if (!sr.isOk()) {
                     Vutil.showErrorMsg(sr.getMessage());
                 }
@@ -93,16 +91,16 @@ class StockTableModel extends AbstractTableModel implements CacheListener {
             case 2:
                 String name = aValue + "";
                 modi.setName(name);
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 if (!sr.isOk()) {
                     Vutil.showErrorMsg(sr.getMessage());
                 }
                 break;
             case 4:
                 if (aValue.equals("y")) {
-                    sr = agent.interest(new StockInterestBean(bean.getId()));
+                    sr = agent.interest(bean.getId());
                 } else if (aValue.equals("n")) {
-                    sr = agent.unInterest(new StockUninterestBean(bean.getId()));
+                    sr = agent.unInterest(bean.getId());
                 } else {
                     throw new IllegalArgumentException("错误的interest");
                 }

@@ -4,8 +4,6 @@ import com.jhhc.baseframework.client.Root;
 import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.AccountAgent;
 import org.yecq.goleek.desktop.bean.param.AccountModifyBean;
-import org.yecq.goleek.desktop.bean.param.AccountUnuseBean;
-import org.yecq.goleek.desktop.bean.param.AccountUseBean;
 import org.yecq.goleek.desktop.bean.result.AccountStockInfoBean;
 import org.yecq.goleek.desktop.cache.AccountStockCache;
 import org.yecq.goleek.desktop.cache.CacheListener;
@@ -74,25 +72,25 @@ class AccountStockTableModel extends AbstractTableModel implements CacheListener
         AccountAgent agent = Root.getInstance().getBean(AccountAgent.class);
         Sret sr = null;
         AccountStockInfoBean bean = getRowBean(rowIndex);
-        AccountModifyBean modi = new AccountModifyBean(bean.getId());
+        AccountModifyBean modi = new AccountModifyBean();
         switch (columnIndex) {
             case 1:
                 modi.setCode(aValue + "");
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 break;
             case 2:
                 modi.setCompany(aValue + "");
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 break;
             case 3:
                 modi.setMoney(Double.parseDouble(aValue + ""));
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 break;
             case 4:
                 if (aValue.equals("y")) {
-                    sr = agent.use(new AccountUseBean(bean.getId()));
+                    sr = agent.use(bean.getId());
                 } else if (aValue.equals("n")) {
-                    sr = agent.unUse(new AccountUnuseBean(bean.getId()));
+                    sr = agent.unUse(bean.getId());
                 } else {
                     throw new IllegalArgumentException("使用（取消使用）账户参数出错");
                 }

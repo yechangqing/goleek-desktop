@@ -44,7 +44,7 @@ public class PositionStockCache extends CacheBase implements CoreChangeListener 
     }
 
     private void doLoadPosition() {
-        Sret sr = agent.getgetListAll();
+        Sret sr = agent.getListAll();
         if (!sr.isOk()) {
             this.all = new ArrayList(0);
             Vutil.showErrorMsg(sr.getMessage());

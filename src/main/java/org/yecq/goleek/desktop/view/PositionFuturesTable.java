@@ -3,7 +3,6 @@ package org.yecq.goleek.desktop.view;
 import com.jhhc.baseframework.client.Root;
 import com.jhhc.baseframework.client.rest.Sret;
 import org.yecq.goleek.desktop.agent.PositionFuturesAgent;
-import org.yecq.goleek.desktop.bean.param.PositionFuturesDeleteBean;
 import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
 import java.awt.Color;
 import java.awt.Component;
@@ -52,9 +51,9 @@ class PositionFuturesTable extends JTable {
         int w1 = (int) (width * 5 / 46);
         int w2 = (int) (width * 3 / 46);
         int w3 = (int) (width * 3 / 46);
-        int w4 = (int) (width * 6 / 46);
-        int w5 = (int) (width * 11 / 46);
-        int w6 = (int) (width * 6 / 46);
+        int w4 = (int) (width * 5 / 46);
+        int w5 = (int) (width * 12 / 46);
+        int w6 = (int) (width * 7 / 46);
 
         TableColumnModel m = getColumnModel();
 
@@ -107,8 +106,7 @@ class PositionFuturesTable extends JTable {
                         public void actionPerformed(ActionEvent e) {
                             if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否删除期货持仓？", "？", JOptionPane.YES_NO_OPTION)
                                     == JOptionPane.YES_OPTION) {
-                                PositionFuturesDeleteBean del = new PositionFuturesDeleteBean(bean.getId());
-                                Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).delete(del);
+                                Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).delete(bean.getId());
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                 }

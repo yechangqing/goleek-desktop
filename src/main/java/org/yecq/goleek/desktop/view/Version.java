@@ -8,15 +8,14 @@ package org.yecq.goleek.desktop.view;
 public final class Version {
 
     public static String getVersion() {
-        return "v1.1";
+        return "v2.0";
     }
 
     public static String[] getFuncitonList() {
         return new String[]{
-            "使用baseframework中的监听通知方式",
-            "修改了版本显示的方式",
-            "增加了期货和股票品种全部选和全部取消的功能",
-            "改新浪云服务器地址为applinzi.com"
+            "版本号改为2.0，跟服务器2.0版本的RESTful api保持一致",
+            "http方法改为使用RestUtil的REST api",
+            "修改某些组件尺寸已适合平板上的尺寸"
         };
     }
 }

@@ -236,7 +236,7 @@ class FururesModifyDialog extends JDialog {
                 }
                 String exchange = (String) tt;
 
-                FuturesModifyBean modi = new FuturesModifyBean(bean.getId());
+                FuturesModifyBean modi = new FuturesModifyBean();
                 modi.setCode(code);
                 modi.setName(name);
                 modi.setMargin(margin);
@@ -244,7 +244,7 @@ class FururesModifyDialog extends JDialog {
                 modi.setMin(min);
                 modi.setExchange(exchange);
                 if (JOptionPane.showConfirmDialog(null, "是否修改？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                    Sret sr = Root.getInstance().getBean(FuturesAgent.class).modify(modi);
+                    Sret sr = Root.getInstance().getBean(FuturesAgent.class).modify(bean.getId(), modi);
                     if (!sr.isOk()) {
                         Vutil.showErrorMsg(sr.getMessage());
                     } else {

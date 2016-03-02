@@ -90,14 +90,14 @@ class StockDialog extends JDialog {
         tc.weightx = 1;
         tc.anchor = GridBagConstraints.EAST;
         JButton all1 = new JButton("全部选");
-        all1.setPreferredSize(new Dimension(70, 22));
+        all1.setPreferredSize(new Dimension(90, 22));
         this.obj.put("select_all", all1);
         tmpp.add(all1, tc);
         tc.gridx++;
         tc.weightx = 0;
         tc.insets = new Insets(0, 3, 0, 0);
         JButton can1 = new JButton("全取消");
-        can1.setPreferredSize(new Dimension(70, 22));
+        can1.setPreferredSize(new Dimension(90, 22));
         this.obj.put("cancel_all", can1);
         tmpp.add(can1, tc);
         p.add(tmpp, c);

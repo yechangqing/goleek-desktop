@@ -6,7 +6,6 @@ package org.yecq.goleek.desktop.bean.param;
  */
 public class PositionStockCloseBean {
 
-    private String id;
     private int lot;
     private double price;
     private String date;
@@ -14,19 +13,10 @@ public class PositionStockCloseBean {
     public PositionStockCloseBean() {
     }
 
-    public PositionStockCloseBean(String id, int lot, double price, String date) {
-        this.id = id;
+    public PositionStockCloseBean(int lot, double price, String date) {
         this.lot = lot;
         this.price = price;
         this.date = date;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public int getLot() {

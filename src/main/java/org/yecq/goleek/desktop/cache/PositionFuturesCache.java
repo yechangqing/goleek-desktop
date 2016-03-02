@@ -2,6 +2,7 @@ package org.yecq.goleek.desktop.cache;
 
 import com.jhhc.baseframework.client.listener.CoreChangeListener;
 import com.jhhc.baseframework.client.rest.Sret;
+import java.io.UnsupportedEncodingException;
 import org.yecq.goleek.desktop.agent.PositionFuturesAgent;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesActionsBean;
 import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
@@ -10,7 +11,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -82,5 +85,4 @@ public class PositionFuturesCache extends CacheBase implements CoreChangeListene
     public String[] getNotifyNames() {
         return new String[]{"position_detail_futures", "position_futures", "detail_futures"};
     }
-
 }

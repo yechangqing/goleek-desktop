@@ -9,31 +9,18 @@ import java.util.Set;
  */
 public class FuturesModifyBean {
 
-    private String id;
     private String code;
     private String name;
     private double margin;
     private int unit;
     private double min;
     private String exchange;
+    private String interest;
 
     private Set<String> v;
 
     public FuturesModifyBean() {
         this.v = new HashSet();
-    }
-
-    public FuturesModifyBean(String id) {
-        this.id = id;
-        this.v = new HashSet();
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public boolean isCode() {
@@ -132,4 +119,19 @@ public class FuturesModifyBean {
         this.v.add("exchange");
     }
 
+    public boolean isInterest() {
+        return this.v.contains("interest");
+    }
+
+    public String getInterest() {
+        if (!isInterest()) {
+            throw new IllegalArgumentException("未设置interest");
+        }
+        return interest;
+    }
+
+    public void setInterest(String interest) {
+        this.interest = interest;
+        this.v.add("interest");
+    }
 }
