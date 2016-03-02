@@ -118,9 +118,9 @@ class FuturesTable extends JTable {
         int w0 = (int) (width * 1 / 46);
         int w1 = (int) (width * 6 / 46);
         int w2 = (int) (width * 6 / 46);
-        int w3 = (int) (width * 8 / 46);
+        int w3 = (int) (width * 7 / 46);
         int w4 = (int) (width * 6 / 46);
-        int w5 = (int) (width * 2 / 46);
+        int w5 = (int) (width * 3 / 46);
 
         TableColumnModel m = getColumnModel();
 

@@ -100,7 +100,7 @@ class PositionStockTable extends JTable {
         int w1 = (int) (width * 4 / 46);
         int w2 = (int) (width * 5 / 46);
         int w3 = (int) (width * 3 / 46);
-        int w4 = (int) (width * 6 / 46);
+        int w4 = (int) (width * 5 / 46);
         int w5 = (int) (width * 10 / 46);
         int w6 = (int) (width * 5 / 46);
 

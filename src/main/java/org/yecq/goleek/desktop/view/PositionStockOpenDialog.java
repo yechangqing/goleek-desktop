@@ -116,7 +116,7 @@ class PositionStockOpenDialog extends JDialog {
         c.insets = new Insets(5, 15, 0, 0);
         c.anchor = GridBagConstraints.WEST;
         JComboBox name = new JComboBox();
-        Dimension dd = new Dimension(90, 22);
+        Dimension dd = new Dimension(100, 22);
         name.setPreferredSize(dd);
         this.obj.put("name", name);
         p.add(name, c);
