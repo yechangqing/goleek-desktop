@@ -25,72 +25,72 @@ public class AccountAgent extends AgentBase {
     }
 
     public Sret getAccountListFutures() {
-        String json = HttpUtil.post(getUrlString() + "get_list_futures.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_list_futures.php", null);
         Sret sr = getSret(json, AccountFuturesInfoBean.class);
         return sr;
     }
 
     public Sret getAccountListFuturesUsed() {
-        String json = HttpUtil.post(getUrlString() + "get_list_futures_used.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_list_futures_used.php", null);
         Sret sr = getSret(json, AccountFuturesInfoBean.class);
         return sr;
     }
 
     @Notify({"account"})
     public Sret add(AccountAddBean bean) {
-        String json = HttpUtil.post(getUrlString() + "add.go", bean);
+        String json = HttpUtil.post(getUrlString() + "add.php", bean);
         Sret sr = getSretSingle(json, String.class);
         return sr;
     }
 
     @Notify({"account"})
     public Sret remove(AccountRemoveBean bean) {
-        String json = HttpUtil.post(getUrlString() + "remove.go", bean);
+        String json = HttpUtil.post(getUrlString() + "remove.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     @Notify({"account"})
     public Sret modify(AccountModifyBean bean) {
-        String json = HttpUtil.post(getUrlString() + "modify.go", bean);
+        String json = HttpUtil.post(getUrlString() + "modify.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     @Notify({"account"})
     public Sret use(AccountUseBean bean) {
-        String json = HttpUtil.post(getUrlString() + "use.go", bean);
+        String json = HttpUtil.post(getUrlString() + "use.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     @Notify({"account"})
     public Sret unUse(AccountUnuseBean bean) {
-        String json = HttpUtil.post(getUrlString() + "un_use.go", bean);
+        String json = HttpUtil.post(getUrlString() + "un_use.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     public Sret getAccountListStock() {
-        String json = HttpUtil.post(getUrlString() + "get_list_stock.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_list_stock.php", null);
         Sret sr = getSret(json, AccountStockInfoBean.class);
         return sr;
     }
 
     public Sret getAccountListStockUsed() {
-        String json = HttpUtil.post(getUrlString() + "get_list_stock_used.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_list_stock_used.php", null);
         Sret sr = getSret(json, AccountStockInfoBean.class);
         return sr;
     }
 
     public Sret getMoneyFutures() {
-        String json = HttpUtil.post(getUrlString() + "get_money_futures.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_money_futures.php", null);
         Sret sr = getSret(json, Double.class);
         return sr;
     }
 
     public Sret getMoneyStock() {
-        String json = HttpUtil.post(getUrlString() + "get_money_stock.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_money_stock.php", null);
         Sret sr = getSret(json, Double.class);
         return sr;
     }

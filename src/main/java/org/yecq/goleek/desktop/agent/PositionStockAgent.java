@@ -23,41 +23,41 @@ public class PositionStockAgent extends AgentBase {
     }
 
     public Sret getgetListAll() {
-        String json = HttpUtil.post(getUrlString() + "get_list_all.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_list_all.php", null);
         Sret sr = getSret(json, PositionStockInfoBean.class);
         return sr;
     }
 
     @Notify({"position_stock"})
     public Sret editQuit(PositionStockEditBean bean) {
-        String json = HttpUtil.post(getUrlString() + "edit_quit.go", bean);
+        String json = HttpUtil.post(getUrlString() + "edit_quit.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     @Notify({"position_detail_stock", "position_stock", "detail_stock"})
     public Sret open(PositionStockOpenBean bean) {
-        String json = HttpUtil.post(getUrlString() + "open.go", bean);
+        String json = HttpUtil.post(getUrlString() + "open.php", bean);
         Sret sr = getSretSingle(json, String.class);
         return sr;
     }
 
     @Notify({"position_detail_stock", "position_stock", "detail_stock"})
     public Sret close(PositionStockCloseBean bean) {
-        String json = HttpUtil.post(getUrlString() + "close.go", bean);
+        String json = HttpUtil.post(getUrlString() + "close.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     @Notify({"position_detail_stock", "position_stock", "detail_stock"})
     public Sret delete(PositionStockDeleteBean bean) {
-        String json = HttpUtil.post(getUrlString() + "delete.go", bean);
+        String json = HttpUtil.post(getUrlString() + "delete.php", bean);
         Sret sr = getSret(json, null);
         return sr;
     }
 
     public Sret getActions() {
-        String json = HttpUtil.post(getUrlString() + "get_actions.go", null);
+        String json = HttpUtil.post(getUrlString() + "get_actions.php", null);
         Sret sr = getSret(json, String.class);
         return sr;
     }
