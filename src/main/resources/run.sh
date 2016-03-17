@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 classpath=.
-classpath=$classpath:./goleek-desktop-1.1.jar
+classpath=$classpath:./goleek-desktop-1.1.php.jar
 classpath=$classpath:./lib/aopalliance-1.0.jar
 classpath=$classpath:./lib/aspectjweaver-1.8.4.jar
 classpath=$classpath:./lib/baseframework-plain-1.0.jar
