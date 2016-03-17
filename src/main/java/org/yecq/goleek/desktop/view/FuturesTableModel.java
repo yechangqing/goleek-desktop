@@ -1,9 +1,7 @@
 package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.FuturesAgent;
-import org.yecq.goleek.desktop.bean.param.FuturesInterestBean;
 import org.yecq.goleek.desktop.bean.param.FuturesModifyBean;
-import org.yecq.goleek.desktop.bean.param.FuturesUninterestBean;
 import org.yecq.goleek.desktop.bean.result.FuturesInfoBean;
 import org.yecq.goleek.desktop.cache.CacheListener;
 import org.yecq.goleek.desktop.cache.FuturesCache;
@@ -72,29 +70,29 @@ class FuturesTableModel extends AbstractTableModel implements CacheListener {
         FuturesAgent agent = Root.getInstance().getBean(FuturesAgent.class);
         Sret sr = null;
         FuturesInfoBean bean = getRowBean(rowIndex);
-        FuturesModifyBean modi = new FuturesModifyBean(bean.getId());
+        FuturesModifyBean modi = new FuturesModifyBean();
         switch (columnIndex) {
             case 1:
                 modi.setCode(aValue + "");
-                agent.modify(modi);
+                agent.modify(bean.getId(), modi);
                 break;
             case 2:
                 modi.setName(aValue + "");
-                agent.modify(modi);
+                agent.modify(bean.getId(), modi);
                 break;
             case 3:
                 modi.setMargin(Double.parseDouble(aValue + ""));
-                agent.modify(modi);
+                agent.modify(bean.getId(), modi);
                 break;
             case 4:
                 modi.setExchange(aValue + "");
-                agent.modify(modi);
+                agent.modify(bean.getId(), modi);
                 break;
             case 5:
                 if (aValue.equals("y")) {
-                    agent.interest(new FuturesInterestBean(bean.getId()));
+                    agent.interest(bean.getId());
                 } else if (aValue.equals("n")) {
-                    agent.unInterest(new FuturesUninterestBean(bean.getId()));
+                    agent.unInterest(bean.getId());
                 } else {
                     throw new IllegalArgumentException("错误的参数");
                 }

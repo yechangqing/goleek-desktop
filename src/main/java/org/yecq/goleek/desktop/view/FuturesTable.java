@@ -2,7 +2,6 @@ package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.FuturesAgent;
 import org.yecq.goleek.desktop.bean.param.FuturesCloneBean;
-import org.yecq.goleek.desktop.bean.param.FuturesRemoveBean;
 import org.yecq.goleek.desktop.bean.result.FuturesInfoBean;
 import java.awt.Color;
 import java.awt.Component;
@@ -72,7 +71,7 @@ class FuturesTable extends JTable {
                         public void actionPerformed(ActionEvent e) {
                             String code = JOptionPane.showInputDialog(MainFrame.getInstance(), "输入新合约代号", bean.getCode());
                             if (code != null && JOptionPane.showConfirmDialog(null, "是否克隆为新合约" + code, "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                                Sret sr = Root.getInstance().getBean(FuturesAgent.class).cloneItself(new FuturesCloneBean(bean.getId(), code));
+                                Sret sr = Root.getInstance().getBean(FuturesAgent.class).cloneItself(bean.getId(), new FuturesCloneBean(code));
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                 }
@@ -93,7 +92,7 @@ class FuturesTable extends JTable {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否删除该合约？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                                Sret sr = Root.getInstance().getBean(FuturesAgent.class).remove(new FuturesRemoveBean(bean.getId()));
+                                Sret sr = Root.getInstance().getBean(FuturesAgent.class).remove(bean.getId());
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                 }

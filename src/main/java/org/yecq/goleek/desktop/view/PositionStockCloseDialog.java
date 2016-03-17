@@ -173,8 +173,8 @@ class PositionStockCloseDialog extends JDialog {
                 }
                 String date = t;
                 if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否卖出？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                    PositionStockCloseBean clo = new PositionStockCloseBean(pos.getId(), lot, price, date);
-                    Sret sr = Root.getInstance().getBean(PositionStockAgent.class).close(clo);
+                    PositionStockCloseBean clo = new PositionStockCloseBean(lot, price, date);
+                    Sret sr = Root.getInstance().getBean(PositionStockAgent.class).close(pos.getId(), clo);
                     if (!sr.isOk()) {
                         Vutil.showErrorMsg(sr.getMessage());
                     } else {

@@ -21,14 +21,14 @@ public class TradeSettingAgent extends AgentBase {
 
     public Sret getDefault() {
         String json = HttpUtil.post(getUrlString() + "get_default.php", null);
-        Sret sr = getSretSingle(json, TradeSettingInfoBean.class);
+        Sret sr = getSretObject(json, TradeSettingInfoBean.class);
         return sr;
     }
 
     @Notify({"setting"})
-    public Sret saveDefault(TradeSettingSaveBean bean) {
-        String json = HttpUtil.post(getUrlString() + "save_default.php", bean);
-        Sret sr = getSret(json, null);
+    public Sret saveDefault(String id, TradeSettingSaveBean bean) {
+        String json = HttpUtil.post(getUrlString() + "save_default.php", id, bean);
+        Sret sr = getSretOnly(json);
         return sr;
     }
 }

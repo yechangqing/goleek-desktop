@@ -158,8 +158,8 @@ class PositionFuturesQuitDialog extends JDialog {
                 ButtonGroup bg = (ButtonGroup) obj.get("group");
                 String action = bg.getSelection().getActionCommand();
 
-                PositionFuturesEditBean bean = new PositionFuturesEditBean(pos.getId(), action, price);
-                Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).editQuit(bean);
+                PositionFuturesEditBean bean = new PositionFuturesEditBean(action, price);
+                Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).editQuit(pos.getId(), bean);
                 if (!sr.isOk()) {
                     Vutil.showErrorMsg(sr.getMessage());
                 } else {

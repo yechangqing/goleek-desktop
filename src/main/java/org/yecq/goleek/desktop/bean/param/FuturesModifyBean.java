@@ -9,7 +9,6 @@ import java.util.Set;
  */
 public class FuturesModifyBean {
 
-    private String id;
     private String code;
     private String name;
     private double margin;
@@ -21,19 +20,6 @@ public class FuturesModifyBean {
 
     public FuturesModifyBean() {
         this.v = new HashSet();
-    }
-
-    public FuturesModifyBean(String id) {
-        this.id = id;
-        this.v = new HashSet();
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public boolean isCode() {

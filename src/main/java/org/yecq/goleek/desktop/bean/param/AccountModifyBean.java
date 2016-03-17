@@ -10,29 +10,19 @@ import java.util.Set;
  */
 public class AccountModifyBean {
 
-    private String id;
     private String code;
     private String company;
     private double money;
     private String used;
 
-    final private Set<String> value;
+    final private Set<String> v;
 
     public AccountModifyBean() {
-        this.value = new HashSet();
-    }
-
-    public AccountModifyBean(String id) {
-        this.id = id;
-        this.value = new HashSet();
-    }
-
-    public String getId() {
-        return id;
+        this.v = new HashSet();
     }
 
     public boolean isCode() {
-        return this.value.contains("code");
+        return this.v.contains("code");
     }
 
     public String getCode() {
@@ -44,11 +34,11 @@ public class AccountModifyBean {
 
     public void setCode(String code) {
         this.code = code;
-        this.value.add("code");
+        this.v.add("code");
     }
 
     public boolean isCompany() {
-        return this.value.contains("code");
+        return this.v.contains("code");
     }
 
     public String getCompany() {
@@ -60,11 +50,11 @@ public class AccountModifyBean {
 
     public void setCompany(String company) {
         this.company = company;
-        this.value.add("company");
+        this.v.add("company");
     }
 
     public boolean isMoney() {
-        return this.value.contains("money");
+        return this.v.contains("money");
     }
 
     public double getMoney() {
@@ -76,11 +66,11 @@ public class AccountModifyBean {
 
     public void setMoney(double money) {
         this.money = money;
-        this.value.add("money");
+        this.v.add("money");
     }
 
     public boolean isUsed() {
-        return this.value.contains("used");
+        return this.v.contains("used");
     }
 
     public String getUsed() {
@@ -92,7 +82,7 @@ public class AccountModifyBean {
 
     public void setUsed(String used) {
         this.used = used;
-        this.value.add("used");
+        this.v.add("used");
     }
 
 }

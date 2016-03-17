@@ -1,7 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.PositionStockAgent;
-import org.yecq.goleek.desktop.bean.param.PositionStockDeleteBean;
 import org.yecq.goleek.desktop.bean.result.PositionStockInfoBean;
 import java.awt.Color;
 import java.awt.Component;
@@ -75,8 +74,7 @@ class PositionStockTable extends JTable {
                         public void actionPerformed(ActionEvent e) {
                             if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否删除股票持仓？", "？", JOptionPane.YES_NO_OPTION)
                                     == JOptionPane.YES_OPTION) {
-                                PositionStockDeleteBean del = new PositionStockDeleteBean(bean.getId());
-                                Sret sr = Root.getInstance().getBean(PositionStockAgent.class).delete(del);
+                                Sret sr = Root.getInstance().getBean(PositionStockAgent.class).delete(bean.getId());
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                 }
@@ -114,7 +112,7 @@ class PositionStockTable extends JTable {
         m.getColumn(5).setPreferredWidth(w5);
         m.getColumn(6).setPreferredWidth(w6);
     }
-    
+
     private class CellColorRenderer extends DefaultTableCellRenderer {
 
         @Override

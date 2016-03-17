@@ -165,8 +165,8 @@ class PositionStockQuitDialog extends JDialog {
                 }
                 String action = mo.getActionCommand();
 
-                PositionStockEditBean edit = new PositionStockEditBean(pos.getId(), action, price);
-                Sret sr = Root.getInstance().getBean(PositionStockAgent.class).editQuit(edit);
+                PositionStockEditBean edit = new PositionStockEditBean(action, price);
+                Sret sr = Root.getInstance().getBean(PositionStockAgent.class).editQuit(pos.getId(), edit);
                 if (!sr.isOk()) {
                     Vutil.showErrorMsg(sr.getMessage());
                 } else {

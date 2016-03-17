@@ -1,7 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.StockAgent;
-import org.yecq.goleek.desktop.bean.param.StockRemoveBean;
 import org.yecq.goleek.desktop.bean.result.StockInfoBean;
 import java.awt.Color;
 import java.awt.Component;
@@ -71,7 +70,7 @@ class StockTable extends JTable {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否删除该股票？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                                Sret sr = Root.getInstance().getBean(StockAgent.class).remove(new StockRemoveBean(bean.getId()));
+                                Sret sr = Root.getInstance().getBean(StockAgent.class).remove(bean.getId());
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                 }

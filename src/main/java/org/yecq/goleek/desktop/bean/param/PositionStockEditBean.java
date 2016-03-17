@@ -6,15 +6,13 @@ package org.yecq.goleek.desktop.bean.param;
  */
 public class PositionStockEditBean {
 
-    private String id;
     private String action;
     private double price;
 
     public PositionStockEditBean() {
     }
 
-    public PositionStockEditBean(String id, String action, double price) {
-        this.id = id;
+    public PositionStockEditBean(String action, double price) {
         this.action = action;
         this.price = price;
     }
@@ -25,14 +23,6 @@ public class PositionStockEditBean {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getAction() {

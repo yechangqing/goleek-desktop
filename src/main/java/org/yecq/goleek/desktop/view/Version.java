@@ -8,16 +8,13 @@ package org.yecq.goleek.desktop.view;
 public final class Version {
 
     public static String getVersion() {
-        return "v1.1";
+        return "v1.1.php";
     }
 
     public static String[] getFuncitonList() {
         return new String[]{
-            "使用baseframework中的监听通知方式",
-            "修改了版本显示的方式",
-            "增加了期货和股票品种全部选和全部取消的功能",
-            "改新浪云服务器地址为applinzi.com",
-            "根据iwork平板修改一下一些组件的尺寸"
+            "修改版本号为v1.1.php",
+            "配合php做的服务器后端，修改了agent的一些接口"
         };
     }
 }

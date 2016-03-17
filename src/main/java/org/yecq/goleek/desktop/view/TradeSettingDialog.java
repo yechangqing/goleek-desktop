@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import org.yecq.baseframework.plain.core.Root;
 import org.yecq.baseframework.plain.service.Sret;
+import org.yecq.goleek.desktop.bean.result.TradeSettingInfoBean;
 
 /**
  *
@@ -31,6 +32,7 @@ import org.yecq.baseframework.plain.service.Sret;
 class TradeSettingDialog extends JDialog implements CacheListener {
 
     private Map obj;
+    private String id;
 
     TradeSettingDialog() {
         super(MainFrame.getInstance());
@@ -117,6 +119,7 @@ class TradeSettingDialog extends JDialog implements CacheListener {
 
     private void initData() {
         TradeSettingCache cache = Root.getInstance().getBean(TradeSettingCache.class);
+        this.id = cache.getSetting().getId();
         JTextField op = (JTextField) obj.get("open_percent");
         op.setText(cache.getOpenPercent() + "");
 
@@ -141,9 +144,9 @@ class TradeSettingDialog extends JDialog implements CacheListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否保存该设置？", "？", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                    TradeSettingSaveBean bean = setSetting();
-                    if (bean != null) {
-                        Sret sr = Root.getInstance().getBean(TradeSettingAgent.class).saveDefault(bean);
+                    TradeSettingSaveBean save = setSetting();
+                    if (save != null) {
+                        Sret sr = Root.getInstance().getBean(TradeSettingAgent.class).saveDefault(id, save);
                         if (sr.isOk()) {
                             Vutil.showPlateMsg(sr.getMessage());
                         } else {
@@ -181,7 +184,7 @@ class TradeSettingDialog extends JDialog implements CacheListener {
             return null;
         }
         Root.getInstance().getBean(TradeSettingCache.class).setTemp(open_percent, loss_percent);
-        return new TradeSettingSaveBean("1", open_percent, loss_percent);
+        return new TradeSettingSaveBean(open_percent, loss_percent);
     }
 
     @Override

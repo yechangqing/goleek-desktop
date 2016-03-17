@@ -1,7 +1,6 @@
 package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.PositionFuturesAgent;
-import org.yecq.goleek.desktop.bean.param.PositionFuturesDeleteBean;
 import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
 import java.awt.Color;
 import java.awt.Component;
@@ -107,8 +106,7 @@ class PositionFuturesTable extends JTable {
                         public void actionPerformed(ActionEvent e) {
                             if (JOptionPane.showConfirmDialog(MainFrame.getInstance(), "是否删除期货持仓？", "？", JOptionPane.YES_NO_OPTION)
                                     == JOptionPane.YES_OPTION) {
-                                PositionFuturesDeleteBean del = new PositionFuturesDeleteBean(bean.getId());
-                                Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).delete(del);
+                                Sret sr = Root.getInstance().getBean(PositionFuturesAgent.class).delete(bean.getId());
                                 if (!sr.isOk()) {
                                     Vutil.showErrorMsg(sr.getMessage());
                                 }
@@ -134,15 +132,6 @@ class PositionFuturesTable extends JTable {
                 obj.setBackground(new Color(200, 200, 218));
             } else {
                 obj.setBackground(null);
-            }
-            PositionFuturesInfoBean pos = model.getRowBean(row);
-            if (column == 0) {
-                String is = pos.getIs_ready_close();
-                if (is.equals("y")) {
-                    obj.setBackground(new Color(254, 142, 133));
-                } else {
-                    obj.setForeground(null);
-                }
             }
             return obj;
         }

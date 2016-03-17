@@ -9,7 +9,6 @@ import java.util.Set;
  */
 public class TradeSettingSetBean {
 
-    private String id;
     private double open_percent;
     private double loss_percent;
     private Set<String> v;
@@ -18,15 +17,10 @@ public class TradeSettingSetBean {
         this.v = new HashSet();
     }
 
-    public TradeSettingSetBean(String id, double open_percent, double loss_percent) {
+    public TradeSettingSetBean(double open_percent, double loss_percent) {
         this.v = new HashSet();
-        this.id = id;
         setOpen_percent(open_percent);
         setLoss_percent(loss_percent);
-    }
-
-    public String getId() {
-        return id;
     }
 
     public boolean isOpen_percent() {

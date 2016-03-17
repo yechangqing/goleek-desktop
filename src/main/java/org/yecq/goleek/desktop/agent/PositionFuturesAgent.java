@@ -2,7 +2,6 @@ package org.yecq.goleek.desktop.agent;
 
 import org.yecq.goleek.desktop.bean.param.PositionFuturesActionsBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesCloseBean;
-import org.yecq.goleek.desktop.bean.param.PositionFuturesDeleteBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesEditBean;
 import org.yecq.goleek.desktop.bean.param.PositionFuturesOpenBean;
 import org.yecq.goleek.desktop.bean.result.PositionFuturesInfoBean;
@@ -25,41 +24,41 @@ public class PositionFuturesAgent extends AgentBase {
 
     public Sret getListAll() {
         String json = HttpUtil.post(getUrlString() + "get_list_all.php", null);
-        Sret sr = getSret(json, PositionFuturesInfoBean.class);
+        Sret sr = getSretList(json, PositionFuturesInfoBean.class);
         return sr;
     }
 
     @Notify({"position_futures"})
-    public Sret editQuit(PositionFuturesEditBean bean) {
-        String json = HttpUtil.post(getUrlString() + "edit_quit.php", bean);
-        Sret sr = getSret(json, null);
+    public Sret editQuit(String id, PositionFuturesEditBean bean) {
+        String json = HttpUtil.post(getUrlString() + "edit_quit.php", id, bean);
+        Sret sr = getSretOnly(json);
         return sr;
     }
 
     @Notify({"position_detail_futures", "position_futures", "detail_futures"})
     public Sret open(PositionFuturesOpenBean bean) {
         String json = HttpUtil.post(getUrlString() + "open.php", bean);
-        Sret sr = getSretSingle(json, String.class);
+        Sret sr = getSretObject(json, String.class);
         return sr;
     }
 
     @Notify({"position_detail_futures", "position_futures", "detail_futures"})
-    public Sret close(PositionFuturesCloseBean bean) {
-        String json = HttpUtil.post(getUrlString() + "close.php", bean);
-        Sret sr = getSret(json, null);
+    public Sret close(String id, PositionFuturesCloseBean bean) {
+        String json = HttpUtil.post(getUrlString() + "close.php", id, bean);
+        Sret sr = getSretOnly(json);
         return sr;
     }
 
     @Notify({"position_detail_futures", "position_futures", "detail_futures"})
-    public Sret delete(PositionFuturesDeleteBean bean) {
-        String json = HttpUtil.post(getUrlString() + "delete.php", bean);
-        Sret sr = getSret(json, null);
+    public Sret delete(String id) {
+        String json = HttpUtil.post(getUrlString() + "delete.php", id, null);
+        Sret sr = getSretOnly(json);
         return sr;
     }
 
     public Sret getActions(PositionFuturesActionsBean bean) {
         String json = HttpUtil.post(getUrlString() + "get_actions.php", bean);
-        Sret sr = getSret(json, String.class);
+        Sret sr = getSretObject(json, String[].class);
         return sr;
     }
 

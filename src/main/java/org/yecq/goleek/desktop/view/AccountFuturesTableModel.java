@@ -2,8 +2,6 @@ package org.yecq.goleek.desktop.view;
 
 import org.yecq.goleek.desktop.agent.AccountAgent;
 import org.yecq.goleek.desktop.bean.param.AccountModifyBean;
-import org.yecq.goleek.desktop.bean.param.AccountUnuseBean;
-import org.yecq.goleek.desktop.bean.param.AccountUseBean;
 import org.yecq.goleek.desktop.bean.result.AccountFuturesInfoBean;
 import org.yecq.goleek.desktop.cache.AccountFuturesCache;
 import org.yecq.goleek.desktop.cache.CacheListener;
@@ -74,25 +72,25 @@ class AccountFuturesTableModel extends AbstractTableModel implements CacheListen
         AccountAgent agent = Root.getInstance().getBean(AccountAgent.class);
         Sret sr = null;
         AccountFuturesInfoBean bean = getRowBean(rowIndex);
-        AccountModifyBean modi = new AccountModifyBean(bean.getId());
+        AccountModifyBean modi = new AccountModifyBean();
         switch (columnIndex) {
             case 1:
                 modi.setCode(aValue + "");
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 break;
             case 2:
                 modi.setCompany(aValue + "");
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 break;
             case 3:
                 modi.setMoney(Double.parseDouble(aValue + ""));
-                sr = agent.modify(modi);
+                sr = agent.modify(bean.getId(), modi);
                 break;
             case 4:
                 if (aValue.equals("y")) {
-                    sr = agent.use(new AccountUseBean(bean.getId()));
+                    sr = agent.use(bean.getId());
                 } else if (aValue.equals("n")) {
-                    sr = agent.unUse(new AccountUnuseBean(bean.getId()));
+                    sr = agent.unUse(bean.getId());
                 } else {
                     throw new IllegalArgumentException("使用（取消使用）账户参数出错");
                 }

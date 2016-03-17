@@ -9,7 +9,6 @@ import java.util.Set;
  */
 public class StockModifyBean {
 
-    private String id;
     private String code;
     private String name;
     private String exchange;
@@ -17,11 +16,6 @@ public class StockModifyBean {
     private Set<String> v;
 
     public StockModifyBean() {
-        this.v = new HashSet();
-    }
-
-    public StockModifyBean(String id) {
-        this.id = id;
         this.v = new HashSet();
     }
 
@@ -39,14 +33,6 @@ public class StockModifyBean {
     public void setInterest(String interest) {
         this.interest = interest;
         this.v.add("interest");
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public boolean isCode() {

@@ -15,12 +15,11 @@ public class PositionFuturesInfoBean {
     private double quit_price;
     private String account;
     private String open_date;
-    private String is_ready_close;  // y或则n
 
     public PositionFuturesInfoBean() {
     }
 
-    public PositionFuturesInfoBean(String id, String contract, String direct, int lot, double open_price, String action, double quit_price, String account, String open_date, String is_ready_close) {
+    public PositionFuturesInfoBean(String id, String contract, String direct, int lot, double open_price, String action, double quit_price, String account, String open_date) {
         this.id = id;
         this.contract = contract;
         this.direct = direct;
@@ -30,7 +29,6 @@ public class PositionFuturesInfoBean {
         this.quit_price = quit_price;
         this.account = account;
         this.open_date = open_date;
-        this.is_ready_close = is_ready_close;
     }
 
     public String getId() {
@@ -104,13 +102,4 @@ public class PositionFuturesInfoBean {
     public void setOpen_date(String open_date) {
         this.open_date = open_date;
     }
-
-    public String getIs_ready_close() {
-        return is_ready_close;
-    }
-
-    public void setIs_ready_close(String is_ready_close) {
-        this.is_ready_close = is_ready_close;
-    }
-
 }
