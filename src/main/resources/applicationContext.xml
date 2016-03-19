@@ -37,11 +37,11 @@
     </aop:config>
     
     <!-- 配置服务器地址 -->
-<!--    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
-              p:ip="goleek.applinzi.com" p:port="" p:app=""/>-->
-    
     <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
-          p:ip="127.0.0.1" p:port="8888" p:app="goleek-php"/>
+          p:ip="goleekphp.applinzi.com" p:port="" p:app=""/>
+    
+    <!--    <bean id="ip-port" class="org.yecq.goleek.desktop.agent.IpPort"
+    p:ip="127.0.0.1" p:port="8888" p:app="goleek-php"/>-->
     
     <!-- 初始启动的模式，正常还是简单，只能为normal或simple -->
     <bean id="mode" class="org.yecq.goleek.desktop.view.Mode" p:mode="simple"/>
