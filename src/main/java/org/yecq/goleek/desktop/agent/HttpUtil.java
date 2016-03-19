@@ -31,6 +31,7 @@ public final class HttpUtil {
         CloseableHttpResponse response = null;
         try {
             List<NameValuePair> nvps = new LinkedList();
+            nvps.add(new BasicNameValuePair("pass", "本宝宝"));
             if (obj != null) {
                 String json = new Gson().toJson(obj);
                 nvps.add(new BasicNameValuePair("json", json));
@@ -65,6 +66,7 @@ public final class HttpUtil {
         CloseableHttpResponse response = null;
         try {
             List<NameValuePair> nvps = new LinkedList();
+            nvps.add(new BasicNameValuePair("pass", "本宝宝"));
             nvps.add(new BasicNameValuePair("id", id));
             if (obj != null) {
                 String json = new Gson().toJson(obj);
